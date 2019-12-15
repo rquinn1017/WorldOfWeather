@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>What's the Weather?</title>
+
+    <!-- Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="assets/style.css" /> -->
+  </head>
+
+  <body>
+    <!-- Beginning of Navbar -->
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
+    </nav>
+
+    <!-- End of Navbar -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3">
+          <form>
+            <div class="form-group search-cities__block">
+              <label class="sr-only" for="help-search">Search</label
+              ><input
+                type="text"
+                class="form-control border-color col-sm-9"
+                placeholder="Your city name"
+                data-original-title=""
+                title=""
+              />
+            </div>
+           </form>
+          
+          <button type="“button”" id="submitWeather" class=“btn”>
+            Search
+          </button>
+        </div>
+        <div class="col-sm-9">
+          
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // var startYear =  $(".start-year").text
+      // var endYear = $(".start-year").text
+      // var query = $(".search").text
+      // var number = $("number-retrieve")
+
+      // // var queryURL = "https://api.openbrewerydb.org/breweries?by_state=virginia";
+
+      // var queryURL_5Day = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=43604669ed26bcf8b5858af9ce91c46a";
+
+      // var queryURL_5Day = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=43604669ed26bcf8b5858af9ce91c46a";
+      // // "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=" + startYear + "&end_date" + endYear + "&q=" + query + "&api-key=9qYOevLt8LZN1Y60GVBvkg1iZHfGFO2Z";
+
+      // $("#search").on("click", function() {
+
+      //     // console.log(queryURL);
+      // $.ajax({
+      //     url: queryURL,
+      //     method: "GET"
+      // })
+      //         .then(function(response) {
+      //         console.log(response);
+
+      //     });
+      //    });
+    </script>
+    <script src="main.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script>
+      moment().format();
+    </script>
+  </body>
+</html>
