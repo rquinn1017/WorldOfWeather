@@ -1,55 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>What's the Weather?</title>
 
-    <!-- Bootstrap CDN -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!-- <link rel="stylesheet" type="text/css" href="assets/style.css" /> -->
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>What's the Weather?</title>
 
-  <body>
-    <!-- Beginning of Navbar -->
-    <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
-    </nav>
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="assets/style.css" /> -->
+</head>
 
-    <!-- End of Navbar -->
+<body>
+  <!-- Beginning of Navbar -->
+  <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
+  </nav>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3">
-          <form>
-            <div class="form-group search-cities__block">
-              <label class="sr-only" for="help-search">Search</label
-              ><input
-                type="text"
-                class="form-control border-color col-sm-9"
-                placeholder="Your city name"
-                data-original-title=""
-                title=""
-              />
+  <!-- End of Navbar -->
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <form>
+          <div class="form-group search-cities__block">
+            <label class="sr-only" for="help-search">Search</label><input type="text"
+              class="form-control border-color col-sm-9" placeholder="Your city name" data-original-title="" title="" />
+          </div>
+        </form>
+
+        <button type="“button”" id="submitWeather" class="“btn”">
+          Search
+        </button>
+      </div>
+      <div class="col-sm-9">
+        <div id="result"></div>
+        <div id="UV"></div>
+        <div class="row">
+          <div class="col=sm-12">
+            <div id="5dayForecast">
+              <h2>5 Day Forecast:</h2>
             </div>
-          </form>
-
-          <button type="“button”" id="submitWeather" class="“btn”">
-            Search
-          </button>
-        </div>
-        <div class="col-sm-9">
-          <div id="result"></div>
-          <div id="UV"></div>
-
-          <div id="5dayForecast">
-            <!-- <h2>5 Day Forecast:</h2>
+            <div class="row">
+              <div class="col=sm-2">
             <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -59,16 +52,75 @@
                   the bulk of the card's content.
                 </p>
                 <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a> -->
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col=sm-2">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col=sm-2">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col=sm-2">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col=sm-2">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
               </div>
             </div>
           </div>
         </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
       // var startYear =  $(".start-year").text
       // var endYear = $(".start-year").text
       // var query = $(".search").text
@@ -93,11 +145,12 @@
 
       //     });
       //    });
-    </script>
-    <script src="main.js"></script>
-    <script src="https://momentjs.com/downloads/moment.js"></script>
-    <script>
-      moment().format();
-    </script>
-  </body>
+  </script>
+  <script src="main.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script>
+    moment().format();
+  </script>
+</body>
+
 </html>
