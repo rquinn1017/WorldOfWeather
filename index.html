@@ -8,7 +8,7 @@
   <!-- Bootstrap CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <!-- <link rel="stylesheet" type="text/css" href="assets/style.css" /> -->
+  <link rel="stylesheet" type="text/css" href="assets/styles.css" />
 </head>
 
 <body>
@@ -34,89 +34,96 @@
         </button>
       </div>
       <div class="col-sm-9">
-        <div id="result"></div>
-        <div id="UV"></div>
-        <div class="row">
-          <div class="col=sm-12">
-            <div id="5dayForecast">
-              <h2>5 Day Forecast:</h2>
-            </div>
-            <div class="row">
-              <div class="col=sm-2">
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
+        <div class="containter" id=currentWeather>
+          <div id="result">
+            <h2>Current Weather</h2>
           </div>
-          <div class="col=sm-2">
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
 
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col=sm-2">
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
 
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col=sm-2">
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-          </div>
-          <div class="col=sm-2">
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-              </div>
-            </div>
-          </div>
+          <div id="UV"></div>
         </div>
+      
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="5dayForecast">
+            <h2>5 Day Forecast:</h2>
+          </div>
+          <div class="row">
+            <div class="col=sm-2">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" id="day1">Card title</h5>
+
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up
+                    the bulk of the card's content.
+                  </p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+            </div>
+            <div class="col=sm-2">
+              <div class="card" id="day2" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up
+                    the bulk of the card's content.
+                  </p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+            </div>
+            <div class="col=sm-2">
+              <div class="card" id="day3" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up
+                    the bulk of the card's content.
+                  </p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+            </div>
+            <div class="col=sm-2">
+              <div class="card" id="day4" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up
+                    the bulk of the card's content.
+                  </p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+            </div>
+            <div class="col=sm-2">
+              <div class="card" id="day5" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up
+                    the bulk of the card's content.
+                  </p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

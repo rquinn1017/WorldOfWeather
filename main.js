@@ -33,9 +33,9 @@ console.log(urlFive);
                             (currentDate);
                 
                         return "<h2>" + current.name + " (" + currentDate + ")" + "</h2>" +
-                            "<h3><strong>Temperature</strong>: " + current.main.temp + " °F" + "</h3>" +
-                            "<h3><strong>Humidity</strong>: " + current.main.humidity + "%" + "</h3>" +
-                            "<h3><strong>Wind Speed</strong>: " + current.wind.speed + " MPH" + "</h3>"
+                            "<p><strong>Temperature</strong>: " + current.main.temp + " °F" + "</p>" +
+                            "<p><strong>Humidity</strong>: " + current.main.humidity + "%" + "</p>" +
+                            "<p><strong>Wind Speed</strong>: " + current.wind.speed + " MPH" + "</p>"
                        
                     };
 
@@ -51,7 +51,7 @@ console.log(urlFive);
                                 function show(UV) {
 
 
-                                    return "<h3><strong>UV Index</strong>: " + UV.value + "</h3>"
+                                    return "<p><strong>UV Index</strong>: " + UV.value + "</p>"
                             
                                 };
 
@@ -70,14 +70,14 @@ console.log(urlFive);
         // dataType: "jsonp",   
         success: function(five){
             var cards = show(five);
-        $("#5dayForecast").html(cards);
+        $("#day1").html(cards);
         console.log(five)
         // $("#city").val("");
 
         function show(five) {
 
 
-            return "<h3><strong>Test</strong>: " + five.list[0].main.temp_max + "</h3>"
+            return "<h3><strong></strong>" + five.list[0].dt_txt + "</h3>"
     
         };
         }
