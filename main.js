@@ -9,15 +9,11 @@ $(document).ready(function () {
         let days = "5;"
         let urlCurrent = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + units + "&appid=" + apiKey;
         let urlFive = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=" + units + "&appid=" + apiKey;
-        // console.log(urlCurrent);
-
-        // var queryURL_5Day = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=43604669ed26bcf8b5858af9ce91c46a";
-
-        //     var queryURL_5Day = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=43604669ed26bcf8b5858af9ce91c46a";
-        // "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=" + startYear + "&end_date" + endYear + "&q=" + query + "&api-key=9qYOevLt8LZN1Y60GVBvkg1iZHfGFO2Z";
+        
 
         if (city != "") {
 
+console.log(urlFive);
 
             $.ajax({
                 url: urlCurrent,
@@ -28,12 +24,8 @@ $(document).ready(function () {
                     $("#result").html(widget);
                     var lon = current.coord.lon;
                     var lat = current.coord.lat;
-                    console.log(lon);
                     var urlUV = "http://api.openweathermap.org/data/2.5/uvi?q=&appid=" + apiKey + "&lat=" + lat + "&lon=" + lon;
-                    // $("#city").val("");
-                    // console.log(urlUV);
-                    // console.log(current);
-
+                  
                     function show(current) {
 
                         var currentDate = moment().format("dddd, MMM Do YYYY");
@@ -45,27 +37,25 @@ $(document).ready(function () {
                             "<h3><strong>Humidity</strong>: " + current.main.humidity + "%" + "</h3>" +
                             "<h3><strong>Wind Speed</strong>: " + current.wind.speed + " MPH" + "</h3>"
                        
-                    }
+                    };
 
             
                    
                     $.ajax({
                             url: urlUV,
                             method: "GET",
-                            // dataType: "jsonp",
-                            success: function (UV) {
+                                success: function (UV) {
                                 var ultraViolet = show(UV);
                                 $("#UV").html(ultraViolet);
-                                // console.log(urlUV);
-                                // console.log(UV);
-                                // console.log(ultraViolet);
-
+                               
                                 function show(UV) {
 
 
                                     return "<h3><strong>UV Index</strong>: " + UV.value + "</h3>"
                             
                                 };
+
+  
                          
                 }
             });
@@ -74,17 +64,24 @@ $(document).ready(function () {
 
 
 
-            // $.ajax({
-            //     url: urlFive,
-            //     method: "GET",
-            //     // dataType: "jsonp",   
-            //     success: function(five){
-            //         var widget5 = show(five);
-            //     $("#5dayForecast").html(widget5);
-            //     console.log(five)
-            //     // $("#city").val("");
-            //     }
-            // });
+    $.ajax({
+        url: urlFive,
+        method: "GET",
+        // dataType: "jsonp",   
+        success: function(five){
+            var cards = show(five);
+        $("#5dayForecast").html(cards);
+        console.log(five)
+        // $("#city").val("");
+
+        function show(five) {
+
+
+            return "<h3><strong>Test</strong>: " + five.list[0].main.temp_max + "</h3>"
+    
+        };
+        }
+    });
 
 
 
