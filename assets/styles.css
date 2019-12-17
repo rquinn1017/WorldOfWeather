@@ -1,7 +1,16 @@
 #currentWeather{
     padding-bottom: 30px;
-};
+    padding-top: 20px;
+}
 
-body{
-    background-color: pink;
-};
+#citySearch{
+    padding-top: 30px;
+}
+
+#header{
+    background-color: grey;
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
