@@ -71,25 +71,30 @@ $(document).ready(function () {
                 success: function (five) {
                     var cards = show(five);
                     // $(".card").html(cards);
-                    console.log(five.list)
+                    console.log(five.list[3].weather[0].icon)
                     // $("#city").val("");
 
                     function show(five) {
 
-
-                        return $("#day1").html(moment(five.list[3].dt_txt).format("ll")),
+                       
+                      return $("#day1").html(moment(five.list[3].dt_txt).format("ll")),
+                        $("#icon1").html('<img src="http://openweathermap.org/img/wn/' + five.list[3].weather[0].icon + '.png"/>'),
                         $("#temp1").html("Temp: " + five.list[3].main.temp_max + " °F"),
-                        $("#humidity1").html("Humidity: " + five.list[3].main.humidity + "%"),
+                        $("#humidity1").html("Humidity: " + five.list[11].main.humidity + "%"),
                         $("#day2").html(moment(five.list[11].dt_txt).format("ll")),
+                        $("#icon2").html('<img src="http://openweathermap.org/img/wn/' + five.list[11].weather[0].icon + '.png"/>'),
                         $("#temp2").html("Temp: " + five.list[11].main.temp_max + " °F"),
                         $("#humidity2").html("Humidity: " + five.list[11].main.humidity + "%"),
                         $("#day3").html(moment(five.list[19].dt_txt).format("ll")),
+                        $("#icon3").html('<img src="http://openweathermap.org/img/wn/' + five.list[19].weather[0].icon + '.png"/>'),
                         $("#temp3").html("Temp: " + five.list[19].main.temp_max + " °F"),
                         $("#humidity3").html("Humidity: " + five.list[19].main.humidity + "%"),
                         $("#day4").html(moment(five.list[27].dt_txt).format("ll")),
+                        $("#icon4").html('<img src="http://openweathermap.org/img/wn/' + five.list[27].weather[0].icon + '.png"/>'),
                         $("#temp4").html("Temp: " + five.list[27].main.temp_max + " °F"),
                         $("#humidity4").html("Humidity: " + five.list[27].main.humidity + "%"),
                         $("#day5").html(moment(five.list[35].dt_txt).format("ll")),
+                        $("#icon5").html('<img src="http://openweathermap.org/img/wn/' + five.list[35].weather[0].icon + '.png"/>'),
                         $("#temp5").html("Temp: " + five.list[35].main.temp_max + " °F"),
                         $("#humidity5").html("Humidity: " + five.list[35].main.humidity + "%")
 
