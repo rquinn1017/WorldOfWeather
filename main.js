@@ -6,10 +6,11 @@ $(document).ready(function () {
         var city = $("#city").val();
         // var city = "austin";
         let units = "imperial";
-        let days = "5;"
+        // let days = "5;"
         let urlCurrent = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + units + "&appid=" + apiKey;
         let urlFive = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=" + units + "&appid=" + apiKey;
-
+        localStorage.setItem(city, city);
+        
         console.log(city);
         if (city != "") {
 
@@ -71,32 +72,32 @@ $(document).ready(function () {
                 success: function (five) {
                     var cards = show(five);
                     // $(".card").html(cards);
-                    console.log(five.list[3].weather[0].icon)
+                    console.log(five.list[7].dt_txt)
                     // $("#city").val("");
 
                     function show(five) {
 
                        
-                      return $("#day1").html(moment(five.list[3].dt_txt).format("ll")),
-                        $("#icon1").html('<img src="http://openweathermap.org/img/wn/' + five.list[3].weather[0].icon + '.png"/>'),
-                        $("#temp1").html("Temp: " + five.list[3].main.temp_max + " °F"),
-                        $("#humidity1").html("Humidity: " + five.list[11].main.humidity + "%"),
-                        $("#day2").html(moment(five.list[11].dt_txt).format("ll")),
-                        $("#icon2").html('<img src="http://openweathermap.org/img/wn/' + five.list[11].weather[0].icon + '.png"/>'),
-                        $("#temp2").html("Temp: " + five.list[11].main.temp_max + " °F"),
-                        $("#humidity2").html("Humidity: " + five.list[11].main.humidity + "%"),
-                        $("#day3").html(moment(five.list[19].dt_txt).format("ll")),
-                        $("#icon3").html('<img src="http://openweathermap.org/img/wn/' + five.list[19].weather[0].icon + '.png"/>'),
-                        $("#temp3").html("Temp: " + five.list[19].main.temp_max + " °F"),
-                        $("#humidity3").html("Humidity: " + five.list[19].main.humidity + "%"),
-                        $("#day4").html(moment(five.list[27].dt_txt).format("ll")),
-                        $("#icon4").html('<img src="http://openweathermap.org/img/wn/' + five.list[27].weather[0].icon + '.png"/>'),
-                        $("#temp4").html("Temp: " + five.list[27].main.temp_max + " °F"),
-                        $("#humidity4").html("Humidity: " + five.list[27].main.humidity + "%"),
-                        $("#day5").html(moment(five.list[35].dt_txt).format("ll")),
-                        $("#icon5").html('<img src="http://openweathermap.org/img/wn/' + five.list[35].weather[0].icon + '.png"/>'),
-                        $("#temp5").html("Temp: " + five.list[35].main.temp_max + " °F"),
-                        $("#humidity5").html("Humidity: " + five.list[35].main.humidity + "%")
+                      return $("#day1").html(moment(five.list[7].dt_txt).format("ll")),
+                        $("#icon1").html('<img src="http://openweathermap.org/img/wn/' + five.list[7].weather[0].icon + '.png"/>'),
+                        $("#temp1").html("Temp: " + five.list[7].main.temp_max + " °F"),
+                        $("#humidity1").html("Humidity: " + five.list[7].main.humidity + "%"),
+                        $("#day2").html(moment(five.list[15].dt_txt).format("ll")),
+                        $("#icon2").html('<img src="http://openweathermap.org/img/wn/' + five.list[15].weather[0].icon + '.png"/>'),
+                        $("#temp2").html("Temp: " + five.list[15].main.temp_max + " °F"),
+                        $("#humidity2").html("Humidity: " + five.list[15].main.humidity + "%"),
+                        $("#day3").html(moment(five.list[23].dt_txt).format("ll")),
+                        $("#icon3").html('<img src="http://openweathermap.org/img/wn/' + five.list[23].weather[0].icon + '.png"/>'),
+                        $("#temp3").html("Temp: " + five.list[23].main.temp_max + " °F"),
+                        $("#humidity3").html("Humidity: " + five.list[23].main.humidity + "%"),
+                        $("#day4").html(moment(five.list[31].dt_txt).format("ll")),
+                        $("#icon4").html('<img src="http://openweathermap.org/img/wn/' + five.list[31].weather[0].icon + '.png"/>'),
+                        $("#temp4").html("Temp: " + five.list[31].main.temp_max + " °F"),
+                        $("#humidity4").html("Humidity: " + five.list[31].main.humidity + "%"),
+                        $("#day5").html(moment(five.list[39].dt_txt).format("ll")),
+                        $("#icon5").html('<img src="http://openweathermap.org/img/wn/' + five.list[39].weather[0].icon + '.png"/>'),
+                        $("#temp5").html("Temp: " + five.list[39].main.temp_max + " °F"),
+                        $("#humidity5").html("Humidity: " + five.list[39].main.humidity + "%")
 
                     };
                 }
