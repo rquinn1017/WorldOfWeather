@@ -70,14 +70,28 @@ $(document).ready(function () {
                 // dataType: "jsonp",   
                 success: function (five) {
                     var cards = show(five);
-                    $("#day1").html(cards);
-                    console.log(five)
+                    // $(".card").html(cards);
+                    console.log(five.list)
                     // $("#city").val("");
 
                     function show(five) {
 
 
-                        return "<h3><strong></strong>" + five.list[0].dt_txt + "</h3>"
+                        return $("#day1").html(moment(five.list[3].dt_txt).format("ll")),
+                        $("#temp1").html("Temp: " + five.list[3].main.temp_max + " °F"),
+                        $("#humidity1").html("Humidity: " + five.list[3].main.humidity + "%"),
+                        $("#day2").html(moment(five.list[11].dt_txt).format("ll")),
+                        $("#temp2").html("Temp: " + five.list[11].main.temp_max + " °F"),
+                        $("#humidity2").html("Humidity: " + five.list[11].main.humidity + "%"),
+                        $("#day3").html(moment(five.list[19].dt_txt).format("ll")),
+                        $("#temp3").html("Temp: " + five.list[19].main.temp_max + " °F"),
+                        $("#humidity3").html("Humidity: " + five.list[19].main.humidity + "%"),
+                        $("#day4").html(moment(five.list[27].dt_txt).format("ll")),
+                        $("#temp4").html("Temp: " + five.list[27].main.temp_max + " °F"),
+                        $("#humidity4").html("Humidity: " + five.list[27].main.humidity + "%"),
+                        $("#day5").html(moment(five.list[35].dt_txt).format("ll")),
+                        $("#temp5").html("Temp: " + five.list[35].main.temp_max + " °F"),
+                        $("#humidity5").html("Humidity: " + five.list[35].main.humidity + "%")
 
                     };
                 }
