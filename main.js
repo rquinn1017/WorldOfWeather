@@ -9,9 +9,15 @@ $(document).ready(function () {
         // let days = "5;"
         let urlCurrent = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + units + "&appid=" + apiKey;
         let urlFive = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=" + units + "&appid=" + apiKey;
-        localStorage.setItem(city, city);
+        var hist = localStorage.length;
+        console.log(hist);
+        localStorage.setItem(hist, city);
+        const search = JSON.parse(localStorage.getItem("city")) || [];
+
+const maxSearch = 5;
         
-        console.log(city);
+
+        console.log(search);
         if (city != "") {
 
             console.log(urlFive);
@@ -111,35 +117,30 @@ $(document).ready(function () {
         }
 
 
-
-
-
-
+     
 
     });
 
-    // function show(five){
 
-    //     // console.log("test");
-    //     //    console.log(city);
+    var hist1 = (localStorage.getItem("0")) || [];
+    var hist2 = (localStorage.getItem("1")) || [];
+    var hist3 = (localStorage.getItem("2")) || [];
+    var hist4 = (localStorage.getItem("3")) || [];
+    var hist5 = (localStorage.getItem("4")) || [];
+    var hist6 = (localStorage.getItem("5")) || [];
+    var hist7 = (localStorage.getItem("6")) || [];
+    var hist8 = (localStorage.getItem("7")) || [];
+    var hist9 = (localStorage.getItem("8")) || [];
+  
 
-    //   return 
-    //     //    "<h2>" + list[2].dt_txt +"</h2>" 
-    //         //   "<h3><strong>Temperature</strong>: "+ current.main.temp + " °F" +"</h3>" +
-    //         //   "<h3><strong>Humidity</strong>: "+ current.main.humidity + "%" +"</h3>" + 
-    //         //   "<h3><strong>Wind Speed</strong>: "+ current.wind.speed + " MPH" +"</h3>"  
-    // console.log("test");
-    //       };
-    // request(url, function (err, response, body) {
-    //   if(err){
-    //     console.log('error:', error);
-    //   } else {
-    //     console.log('body:', body);
-    //   }
-    // });
-
-
-    // "<h3><strong>Weather</strong>: "+ data.list[0].main.temp +"</h3>"  
-    // "<h3><strong>Description</strong>: "+ data.weather[0].description +"</h3>" +
+    $("#hist-9").text(hist1);
+    $("#hist-8").html(hist2);
+    $("#hist-7").html(hist3);
+    $("#hist-6").html(hist4);
+    $("#hist-5").html(hist5);
+    $("#hist-4").html(hist6);
+    $("#hist-3").html(hist7);
+    $("#hist-2").html(hist8);
+    $("#hist-1").html(hist9);
 
 });
