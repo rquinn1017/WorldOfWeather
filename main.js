@@ -16,6 +16,13 @@ $(document).ready(function () {
     let urlCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + units + "&appid=" + apiKey;
     let urlFive = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=" + units + "&appid=" + apiKey;
 
+    
+    if (city === null){
+        $("#weatherContainer").removeAttr("style").hide();
+    }
+    else $("#weatherContainer").show();
+   
+    console.log(city);
 
     $.ajax({
         url: urlCurrent,
@@ -112,7 +119,13 @@ $(document).ready(function () {
         let urlFive = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=" + units + "&appid=" + apiKey;
         var hist = localStorage.length;
         localStorage.setItem(hist, city);
-
+        
+        
+    if (city === null){
+        $("#weatherContainer").removeAttr("style").hide();
+    }
+    else $("#weatherContainer").show();
+    
         if (city != "") {
 
             $.ajax({
@@ -315,5 +328,6 @@ $(document).ready(function () {
             });
         
     });
+
 
 });
