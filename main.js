@@ -26,14 +26,14 @@ $(document).ready(function () {
             var lon = current.coord.lon;
             var lat = current.coord.lat;
             var urlUV = "https://api.openweathermap.org/data/2.5/uvi?q=&appid=" + apiKey + "&lat=" + lat + "&lon=" + lon;
-
             function show(current) {
 
                 var currentDate = moment().format("dddd, MMM Do YYYY");
                 $("#today").text
                     (currentDate);
+                
 
-                return "<h2>" + current.name + " (" + currentDate + ")" + "</h2>" +
+                return "<h2>" + current.name + " (" + currentDate + ")" + ('<img src="http://openweathermap.org/img/wn/' + current.weather[0].icon + '.png"/>') + "</h2>" +
                     "<p><strong>Temperature</strong>: " + current.main.temp + " °F" + "</p>" +
                     "<p><strong>Humidity</strong>: " + current.main.humidity + "%" + "</p>" +
                     "<p><strong>Wind Speed</strong>: " + current.wind.speed + " MPH" + "</p>"
