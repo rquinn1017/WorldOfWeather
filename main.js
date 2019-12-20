@@ -44,7 +44,6 @@ $(document).ready(function () {
                     "<p><strong>Temperature</strong>: " + current.main.temp + " °F" + "</p>" +
                     "<p><strong>Humidity</strong>: " + current.main.humidity + "%" + "</p>" +
                     "<p><strong>Wind Speed</strong>: " + current.wind.speed + " MPH" + "</p>"
-
             };
 
 
@@ -144,7 +143,7 @@ $(document).ready(function () {
                         $("#today").text
                             (currentDate);
 
-                        return "<h2>" + current.name + " (" + currentDate + ")" + "</h2>" +
+                            return "<h2>" + current.name + " (" + currentDate + ")" + ('<img src="https://openweathermap.org/img/wn/' + current.weather[0].icon + '.png"/>') + "</h2>" +
                             "<p><strong>Temperature</strong>: " + current.main.temp + " °F" + "</p>" +
                             "<p><strong>Humidity</strong>: " + current.main.humidity + "%" + "</p>" +
                             "<p><strong>Wind Speed</strong>: " + current.wind.speed + " MPH" + "</p>"
@@ -261,7 +260,7 @@ $(document).ready(function () {
                         $("#today").text
                             (currentDate);
         
-                        return "<h2>" + current.name + " (" + currentDate + ")" + "</h2>" +
+                            return "<h2>" + current.name + " (" + currentDate + ")" + ('<img src="https://openweathermap.org/img/wn/' + current.weather[0].icon + '.png"/>') + "</h2>" +
                             "<p><strong>Temperature</strong>: " + current.main.temp + " °F" + "</p>" +
                             "<p><strong>Humidity</strong>: " + current.main.humidity + "%" + "</p>" +
                             "<p><strong>Wind Speed</strong>: " + current.wind.speed + " MPH" + "</p>"
