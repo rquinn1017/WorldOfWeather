@@ -5,7 +5,7 @@ $(document).ready(function () {
      for (var i = 0; i < localStorage.length; i++) {
         var currentCity = localStorage.getItem(localStorage.key(i));
         $("#previousCity").prepend(
-          '<tr><td class="linkCity"><label> ' + currentCity + " </label></td></tr>"
+          '<tr><td class="linkCity"><label class="cityLink"> ' + currentCity + " </label></td></tr>"
         );
         };
 
@@ -14,7 +14,7 @@ $(document).ready(function () {
     //   '<tr><td class="linkCity"><label> ' + currentCity + " </label></td></tr>"
     // );
     
-
+ 
 var lastSearch =  localStorage.getItem(localStorage.length-1);
 console.log(lastSearch);
 let apiKey = "43604669ed26bcf8b5858af9ce91c46a";
@@ -216,21 +216,21 @@ var city = lastSearch
         
         var newCity = localStorage.getItem(localStorage.length-1);
     $("#previousCity").prepend(
-      '<tr><td class="linkCity"><label> ' + newCity + " </label></td></tr>"
+      '<tr><td class="linkCity"><label class="cityLink"> ' + newCity + " </label></td></tr>"
     );
 
 
     });
 
-    $(".linkCity").click(function() {
+    $('.cityLink').hover(function () {
+        $(this).css('cursor', 'pointer');
+      })
+
+      $(".cityLink").click(function() {
         var tr = $(this)
           .closest("tr")
           .find("label")
           .text();
-
-          console.log(tr);
-    });
-
-
+      });
 
 });
