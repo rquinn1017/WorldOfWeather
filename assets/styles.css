@@ -38,4 +38,8 @@
           line-height: 60px;
           font-size: small;
     }
+
+    #error {
+        color: red;
+    }
   

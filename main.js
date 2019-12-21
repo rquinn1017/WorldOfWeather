@@ -3,12 +3,6 @@
 $(document).ready(function () {
 
     // Runs right when page loads
-    for (var i = 0; i < localStorage.length; i++) {
-        var currentCity = localStorage.getItem(localStorage.key(i));
-        $("#previousCity").prepend(
-            '<tr><td class="linkCity"><label class="cityLink"> ' + currentCity + " </label></td></tr>"
-        );
-    };
 
     let lastSearch = localStorage.getItem(localStorage.length - 1);
     const apiKey = "43604669ed26bcf8b5858af9ce91c46a";
@@ -18,14 +12,23 @@ $(document).ready(function () {
     let urlFive = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=" + units + "&appid=" + apiKey;
 
 
-    if (city === null) {
-        $("#weatherContainer").removeAttr("style").hide();
+    if (city !== null) {
+
+
+        for (var i = 0; i < localStorage.length; i++) {
+            var currentCity = localStorage.getItem(localStorage.key(i));
+            $("#previousCity").prepend(
+                '<tr><td class="linkCity"><label class="cityLink"> ' + currentCity + " </label></td></tr>"
+            );
+        };
+
+
+        getWeather();
     }
-    else $("#weatherContainer").show();
 
-
-    getWeather();
-
+    else
+        $("#weatherContainer").removeAttr("style").hide();
+    $("#error").html("Search criteria cannot be empty!");
 
 
     // Runs when you type in a new search criteria and click the search button
@@ -36,17 +39,13 @@ $(document).ready(function () {
         urlCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + units + "&appid=" + apiKey;
         urlFive = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=" + units + "&appid=" + apiKey;
         let hist = localStorage.length;
-        localStorage.setItem(hist, city);
 
+        console.log(city);
 
-        if (city === null) {
-            $("#weatherContainer").removeAttr("style").hide();
-        }
-        else $("#weatherContainer").show();
+        if (city !== "") {
 
-        if (city != "") {
+            localStorage.setItem(hist, city);
 
-            
             var newCity = localStorage.getItem(localStorage.length - 1);
             $("#previousCity").prepend(
                 '<tr><td class="linkCity"><label class="cityLink"> ' + newCity + " </label></td></tr>"
@@ -54,9 +53,19 @@ $(document).ready(function () {
 
             getWeather();
 
+            $("#city").val(null);
+
+            $("#error").removeAttr("style").hide();
+        }
+
+        else {
+
+            $("#weatherContainer").removeAttr("style").hide();
+            $("#currentWeather").removeAttr("style").hide();
+            $("#error").removeAttr("style").show();
+            $("#error").html("Search criteria cannot be empty!");
+
         };
-
-
     });
 
 
@@ -64,7 +73,7 @@ $(document).ready(function () {
 
     $('.cityLink').hover(function () {
         $(this).css('cursor', 'pointer');
-    })
+    });
 
     // End hover function
 
@@ -82,6 +91,7 @@ $(document).ready(function () {
         localStorage.setItem(hist, city);
 
         getWeather();
+        $("#error").removeAttr("style").hide();
     });
 
     // End click recent
@@ -94,9 +104,18 @@ $(document).ready(function () {
         if (city === null) {
             $("#weatherContainer").removeAttr("style").hide();
         }
-        else $("#weatherContainer").show();
+        else 
+        $("#weatherContainer").show();
+        $("#error").removeAttr("style").hide();
 
-        if (city != "") {
+
+
+        if (city !== null) {
+
+            
+            $("#weatherContainer").removeAttr("style").show();
+            $("#currentWeather").removeAttr("style").show();
+
 
             $.ajax({
                 url: urlCurrent,
@@ -182,9 +201,14 @@ $(document).ready(function () {
 
 
 
-        } else {
+        }
 
-            $("#error").html("Field cannot be empty");
+        else {
+
+            
+            $("#weatherContainer").removeAttr("style").hide();
+            $("#currentWeather").removeAttr("style").hide();
+
         }
 
     };
